@@ -12,17 +12,13 @@
   padding-bottom: 50px;
   padding-top: 25px;
 }
-.navbar-title:hover {
-  cursor: pointer;
-  transform: scale(1.2);
-  transform-origin: 50%;
-  transition: .5s ease;
-}
+
 
 /* -----------------------------HOME----------------------------- */
 #home {
   padding-bottom: 50px;
 }
+
 .home-description {
   margin: auto;
   max-width: 50%;
@@ -66,17 +62,22 @@
   font-size: 25px;
   padding-bottom: 10px;
 }
+
 .streaming-site,
 .purchase-site {
   font-size: 20px;
   text-decoration: none;
   color: white;
   padding-bottom: 5px;
+  transition: .25s ease;
+
 }
+
 .streaming-link,
 .purchase-link {
   text-decoration: none;
 }
+
 .title-description-container {
   display: flex;
   flex-direction: column;
@@ -89,9 +90,11 @@
 .title-poster {
   max-width: 500px;
 }
+
 .title-info {
   padding-top: 50px;
 }
+
 .more-info {
   font-size: 45px;
 }
@@ -99,6 +102,7 @@
 .trailer-title {
   font-size: 45px;
 }
+
 .available-container {
   display: flex;
   flex-direction: row;
@@ -106,6 +110,7 @@
   gap: 100px;
   padding-bottom: 50px;
 }
+
 /* --------------------------YOUTUBE----------------------------- */
 
 .video-container {
@@ -115,7 +120,16 @@
   height: 0;
   overflow: hidden;
 }
-.video-container iframe, .video-container object, .video-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 /* ----------------------PICKMOVIE--------------------------- */
 .pick-movie-title {
@@ -126,15 +140,61 @@
   font-size: 25px;
   transition: .5s ease;
 }
+
 .pick-movie-container {
   padding-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.movie-item:hover {
-  transform: scale(1.2);
-  transform-origin: 50%;
-  cursor: pointer;
-  text-decoration: underline;
+
+
+@media only screen and (max-width: 450px) {
+  .available-container {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .streaming-title,
+  .purchase-title {
+    padding-top: 0;
+  }
+
+  .search-container {
+    padding-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .search-bar {
+    font-size: 25px;
+  }
+
+  .search-button {
+    padding: 7px 15px;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .movie-item:hover {
+    transform: scale(1.2);
+    transform-origin: 50%;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .streaming-site:hover,
+  .purchase-site:hover {
+    transform: scale(1.2);
+    transform-origin: 50%;
+    text-decoration: underline;
+    transition: .25s ease;
+  }
+
+  .navbar-title:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transform-origin: 50%;
+    transition: .5s ease;
+  }
 }
