@@ -1,0 +1,140 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+/* -----------------------------NAVBAR----------------------------- */
+.navbar-container {
+  font-size: 50px;
+  padding-bottom: 50px;
+  padding-top: 25px;
+}
+.navbar-title:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transform-origin: 50%;
+  transition: .5s ease;
+}
+
+/* -----------------------------HOME----------------------------- */
+#home {
+  padding-bottom: 50px;
+}
+.home-description {
+  margin: auto;
+  max-width: 50%;
+  font-size: 24px;
+  padding-bottom: 50px;
+}
+
+.home-header {
+  font-size: 20px;
+  max-width: 50%;
+  margin: auto;
+}
+
+/* -----------------------------SEARCH----------------------------- */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.search-bar {
+  font-size: 30px;
+}
+
+.search-button {
+  padding: 10.5px 20px
+}
+
+/* -----------------------------RESULTS--------------------------- */
+.title-name {
+  font-size: 55px;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 25px;
+}
+
+.streaming-title,
+.purchase-title {
+  padding-top: 25px;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+.streaming-site,
+.purchase-site {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  padding-bottom: 5px;
+}
+.streaming-link,
+.purchase-link {
+  text-decoration: none;
+}
+.title-description-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  justify-content: center;
+  font-size: 20px;
+  margin: auto;
+}
+
+.title-poster {
+  max-width: 500px;
+}
+.title-info {
+  padding-top: 50px;
+}
+.more-info {
+  font-size: 45px;
+}
+
+.trailer-title {
+  font-size: 45px;
+}
+.available-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+  padding-bottom: 50px;
+}
+/* --------------------------YOUTUBE----------------------------- */
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+.video-container iframe, .video-container object, .video-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* ----------------------PICKMOVIE--------------------------- */
+.pick-movie-title {
+  font-size: 35px;
+}
+
+.movie-item {
+  font-size: 25px;
+  transition: .5s ease;
+}
+.pick-movie-container {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.movie-item:hover {
+  transform: scale(1.2);
+  transform-origin: 50%;
+  cursor: pointer;
+  text-decoration: underline;
+}
