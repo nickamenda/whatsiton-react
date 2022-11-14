@@ -9,7 +9,6 @@ export default function Search(props) {
         <form className="search-container" onSubmit={(e) => {
           e.preventDefault()
           handleSearch(query)
-          // setQuery('')
         }}>
           <input className="search-bar" type="text" placeholder="Movie/TV Show" value={query} onChange={(e) => {
             e.preventDefault()

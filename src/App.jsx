@@ -12,14 +12,16 @@ function App() {
   const [pickMovie, setPickMovie] = useState([]);
 
   function handleSearch(query) {
-    if (query.includes(' ')) {
-      query = query.replace(' ', '%20')
-    }
-    axios.get(`http://localhost:1456/watchmode?title=${query}`)
+    query = query.split(' ')
+    var upper = query.map((word) => {
+      return word[0].toUpperCase() + word.substr(1)
+    })
+    upper = upper.join('%20')
+    axios.get(`http://localhost:1456/watchmode?title=${upper}`)
     .then((res) => {
       if (res.data.length > 1) {
         setPickMovie(res.data)
-      } else {
+       } else {
         axios.get(`https://api.watchmode.com/v1/title/${res.data[0]['watchmode_id']}/details/?apiKey=${env.apiKey}&append_to_response=sources`)
         .then((res) => {
           setData(res.data)
