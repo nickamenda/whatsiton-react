@@ -16,33 +16,33 @@ function App() {
       return word[0].toUpperCase() + word.substr(1)
     })
     upper = upper.join('%20')
-    axios.get(`http://localhost:1456/watchmode?title=${upper}`)
-    .then((res) => {
-      if (res.data.length > 1) {
-        setPickMovie(res.data)
-       } else {
-        axios.get(`http://localhost:1456/watchmode/title?id=${res.data[0]['watchmode_id']}`)
-        .then((res) => {
-          setData(res.data)
-        })
-      }
-    })
+    axios.get(`/watchmode?title=${upper}`)
+      .then((res) => {
+        if (res.data.length > 1) {
+          setPickMovie(res.data)
+        } else {
+          axios.get(`/watchmode/title?id=${res.data[0]['watchmode_id']}`)
+            .then((res) => {
+              setData(res.data)
+            })
+        }
+      })
   }
 
   function handleId(id) {
     console.log(id)
-    axios.get(`http://localhost:1456/watchmode/title?id=${id}`)
-    .then((res) => {
-      setData(res.data)
-      setPickMovie([])
-    })
+    axios.get(`/watchmode/title?id=${id}`)
+      .then((res) => {
+        setData(res.data)
+        setPickMovie([])
+      })
 
   }
 
   return (
     <div className="App">
       <Navbar setData={setData} setPickMovie={setPickMovie} />
-      {pickMovie.length <= 1 ? (<Home data={data} handleSearch={handleSearch}/>) : <PickYourMovie pickMovie={pickMovie} handleId={handleId}/>}
+      {pickMovie.length <= 1 ? (<Home data={data} handleSearch={handleSearch} />) : <PickYourMovie pickMovie={pickMovie} handleId={handleId} />}
     </div>
   )
 
